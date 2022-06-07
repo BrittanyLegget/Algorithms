@@ -1,7 +1,30 @@
-import sys
+import argparse
+
+CLI = argparse.ArgumentParser()
+CLI.add_argument(
+    "--list1",
+    nargs="*",
+    type=int,
+    default=[4, 6, 9, 11, 16, 17, 23],  # default if nothing is provided
+)
+CLI.add_argument(
+    "--list2",
+    nargs="*",
+    type=int,
+    default=[1, 1, 1, 3, 7, 9, 11, 18, 20],
+)
+CLI.add_argument(
+    "--k",
+    nargs="*",
+    type=int,
+    default=[12],
+)
 
 
 def kth_element(Arr1, Arr2, k):
+    if len(Arr1) + len(Arr2) < k:
+        return "Error: the value of k cannot be greater than the number if items in the lists combined."
+
     # Two iterators for traversing the two halves
     i = 0
     j = 0
@@ -27,10 +50,11 @@ def kth_element(Arr1, Arr2, k):
                 j += 1
                 x -= 1
     # Print kth element
-    return tempArr[k-1]
+    return tempArr[k - 1]
 
 
-Arr1 = sys.argv[1].split(',')
-Arr2 = sys.argv[2].split(',')
-k = sys.argv[3]
+args = CLI.parse_args()
+Arr1 = args.list1
+Arr2 = args.list2
+k = args.k[0]
 print(kth_element(Arr1, Arr2, k))
