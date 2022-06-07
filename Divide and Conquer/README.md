@@ -17,5 +17,5 @@ python KthElement.py Arg1 Arg2 Arg3
 Example:
 
 ```bash
-python KthElement.py 4,6,9,11,16,17,23 1,1,1,3,7,9,11,18,20 12
+python main.py --list1 1 2 3 4 5 --list2 2 3 8 9 --k 6
 ```
