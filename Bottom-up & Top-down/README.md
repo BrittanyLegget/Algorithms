@@ -1,7 +1,7 @@
 # Description
 
 Bottom-up and top-down approaches to solving LCS.
-The programs, given two character strings, finds the length of the longest common string alignment between them (non-continuous).
+The program, given two character strings, finds the length of the longest common string alignment between them (non-continuous).
 
 # How to run
 
